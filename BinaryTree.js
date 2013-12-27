@@ -71,7 +71,7 @@ var find = function(currentNode, dataTarget) {
         currentNode.visited = true;
         // We havne't seen this node so we need to mark it as visited and
         // add our stack:
-        if (currentNode.data === "dataTarget") {
+        if (currentNode.data === dataTarget) {
             return currentNode;
         }
 
