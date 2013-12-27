@@ -24,7 +24,7 @@ var nodeTemplate =  {
  * @param {type} targetBranch,
  * @return {Null}
  */
-var addNode( node, newData, targetBranch) {
+var addNode = function( node, newData, targetBranch) {
     var newNode = {
             data: newData
         , right: null
@@ -43,23 +43,25 @@ var Tree = {
 
 // Left Branch
 var coolChild = addNode(Tree, "cool", "left");
-var anotherChild  addNode(coolChild , "another", "right");
+var anotherChild  = addNode(coolChild , "another", "right");
 
 
 // Right
 //
 
+/*
 var notCoolChild = addNode(Tree, "not cool", "right");
 var notCoolChild2 = addNode(notCoolChild, "not cool 2", "right");
-var notCoolChild3 = addNode(notCoolChild2, "not cool 3", "left");
+var notCoolChild3 = addNode(notCoolChild2, "not cool 3", "right");
 
 
-console.log("tree");
-console.log(Tree);
 // Breadth first search:
 
 var Stack = [];
 
 
+*/
 
+console.log("tree");
+console.log(Tree);
 
