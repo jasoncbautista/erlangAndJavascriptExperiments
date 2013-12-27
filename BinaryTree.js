@@ -65,12 +65,12 @@ console.log(Tree);
 
 // Depth first search:
 //  Using a stack:
-var find = function(currentNode, dataTarget) {
+var find = function(currentNode, dataTarget, visited) {
     // console.log(currentNode);
     // console.log(Stack);
     // First we add all children to stack if we haven't seen this already:
-    if (currentNode.visited === undefined  ) {
-        currentNode.visited = true;
+    if (currentNode[visited] === undefined  || currentNode[visited] === null ) {
+        currentNode[visited] = true;
         // We havne't seen this node so we need to mark it as visited and
         // add our stack:
         if (currentNode.data === dataTarget) {
@@ -93,17 +93,19 @@ var find = function(currentNode, dataTarget) {
         return null;
     }
 
-    return find(Stack.pop(), dataTarget);
+    return find(Stack.pop(), dataTarget, visited);
 };
 
 
 
 console.log("find: ");
+console.log( "anotehr", find(Tree, "another", 'x'));
+console.log( "notcool3", find(Tree, "notcool3", 'xx'));
+console.log( "not cool 2", find(Tree, "not cool 2", 'xxx'));
+console.log( "not cool x", find(Tree, "not cool x", 'xxxx'));
 
-console.log( "notcool3", find(Tree, "notcool3"));
-console.log( "anotehr", find(Tree, "another"));
-console.log( "not cool x", find(Tree, "not cool x"));
-
+console.log( "notcool3", find(Tree, "notcool3", 'yyxx'));
+console.log( "not cool", find(Tree, "not cool", '7sedfsdxx'));
 
 
 
