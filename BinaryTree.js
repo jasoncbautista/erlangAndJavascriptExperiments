@@ -67,16 +67,7 @@ console.log(Tree);
 //  Using a stack:
 var find = function(currentNode, dataTarget) {
     // First we add all children to stack if we haven't seen this already:
-    if (currentNode.visited === true) {
-        if (Stack.length  === 0 ) {
-            // Nothing to do, not found
-            return null;
-        } else {
-
-        }
-
-    } else {
-
+    if (currentNode.visited === false ) {
         currentNode.visited = true;
         // We havne't seen this node so we need to mark it as visited and
         // add our stack:
@@ -89,8 +80,11 @@ var find = function(currentNode, dataTarget) {
 
     }
 
+    if (Stack.length === 0) {
+        return null;
+    }
 
-    return find(Stack.pop), dataTarget);
+    return find(Stack.pop(), dataTarget);
 };
 
 
