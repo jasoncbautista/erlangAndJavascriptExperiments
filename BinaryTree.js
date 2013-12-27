@@ -47,9 +47,6 @@ var anotherChild  = addNode(coolChild , "another", "right");
 
 
 // Right
-//
-
-/*
 var notCoolChild = addNode(Tree, "not cool", "right");
 var notCoolChild2 = addNode(notCoolChild, "not cool 2", "right");
 var notCoolChild3 = addNode(notCoolChild2, "not cool 3", "right");
@@ -60,8 +57,49 @@ var notCoolChild3 = addNode(notCoolChild2, "not cool 3", "right");
 var Stack = [];
 
 
-*/
-
 console.log("tree");
 console.log(Tree);
+
+
+
+
+// Depth first search:
+//  Using a stack:
+var find = function(currentNode, dataTarget) {
+    // First we add all children to stack if we haven't seen this already:
+    if (currentNode.visited === true) {
+        if (Stack.length  === 0 ) {
+            // Nothing to do, not found
+            return null;
+        } else {
+
+        }
+
+    } else {
+
+        currentNode.visited = true;
+        // We havne't seen this node so we need to mark it as visited and
+        // add our stack:
+        if (currentNode.data === "dataTarget") {
+            return currentNode;
+        }
+
+        Stack.push(currentNode.left);
+        Stack.push(currentNode.right);
+
+    }
+
+
+    return find(Stack.pop), dataTarget);
+};
+
+
+
+console.log( "anotehr", find(Tree, "another"));
+console.log( "not cool 3", find(Tree, "not cool 3"));
+console.log( "not cool x", find(Tree, "not cool x"));
+
+
+
+
 
