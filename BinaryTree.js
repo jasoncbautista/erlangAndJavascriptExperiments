@@ -49,7 +49,7 @@ var anotherChild  = addNode(coolChild , "another", "right");
 // Right
 var notCoolChild = addNode(Tree, "not cool", "right");
 var notCoolChild2 = addNode(notCoolChild, "not cool 2", "right");
-var notCoolChild3 = addNode(notCoolChild2, "not cool 3", "right");
+var notCoolChild3 = addNode(notCoolChild2, "notcool3", "right");
 
 
 // Breadth first search:
@@ -82,7 +82,6 @@ var find = function(currentNode, dataTarget) {
 
         if (currentNode.right === undefined || currentNode.right === null ){
         } else {
-
             Stack.push(currentNode.right);
         }
 
@@ -98,7 +97,7 @@ var find = function(currentNode, dataTarget) {
 
 
 console.log( "anotehr", find(Tree, "another"));
-console.log( "not cool 3", find(Tree, "not cool 3"));
+console.log( "notcool3", find(Tree, "notcool3"));
 console.log( "not cool x", find(Tree, "not cool x"));
 
 
