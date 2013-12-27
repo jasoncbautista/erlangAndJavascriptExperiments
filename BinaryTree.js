@@ -32,7 +32,7 @@ var addNode = function( node, newData, targetBranch) {
     };
 
     node[targetBranch] = newNode;
-    return node;
+    return newNode;
 }
 
 
